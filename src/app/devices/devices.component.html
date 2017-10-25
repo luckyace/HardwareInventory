@@ -1,0 +1,16 @@
+<h1>Hardware Inventory Tool</h1>
+<nav style="text-align:right">
+    <a routerLink="/qr" target="_blank">Print QR</a>
+</nav>
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+        <ng-container *ngFor="let item of values; index as i;" matColumnDef="{{item}}">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>{{names[i]}}</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element[item]}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="values"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: values;" (click)="openDialog(row);"></mat-row>
+    </mat-table>
+</div>

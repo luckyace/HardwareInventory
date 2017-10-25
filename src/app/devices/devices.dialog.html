@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Edit device</h1>
+<div mat-dialog-content>
+    <form>
+        <button mat-button (click)="printImage()">Print QR</button>
+        <table>
+            <tr *ngFor="let name of names; index as i;">
+                <mat-form-field>
+                    <input matInput placeholder="{{name}}" [(ngModel)]="device[values[i]]" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+            </tr>
+        </table>
+    </form>
+    <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="device" tabindex="2">Ok</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">No Thanks</button>
+    </div>
+</div>

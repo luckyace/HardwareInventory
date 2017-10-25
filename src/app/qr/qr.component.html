@@ -1,0 +1,9 @@
+<div>
+    <table>
+        <tr *ngFor="let row of uids">
+            <td *ngFor="let item of row">
+                <img src="https://chart.googleapis.com/chart?chs=70x70&cht=qr&chl={{item}}&choe=UTF-8&chld=M|2">
+            </td>
+        </tr>
+    </table>
+</div>
